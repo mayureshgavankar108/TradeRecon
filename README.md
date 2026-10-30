@@ -33,8 +33,6 @@ Built using React, Node.js, Express, and SQLite, the project demonstrates REST A
 
 ## Application Preview
 
-<!-- Add your screenshot to screenshots/dashboard.png before enabling this image. -->
-
 ![TradeRecon Dashboard](screenshots/dashboard.png)
 
 TradeRecon provides a unified dashboard for uploading trade records, reviewing reconciliation history, and investigating discrepancies between internal and custodian records.
@@ -96,11 +94,9 @@ TradeRecon/
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/mayureshgavankar108/TradeRecon
 cd TradeRecon
 ```
-
-Replace `<YOUR_GITHUB_REPOSITORY_URL>` with your GitHub repository's clone URL.
 
 ### 2. Install backend dependencies
 
