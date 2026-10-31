@@ -22,9 +22,7 @@ function App() {
     setHistoryError("");
 
     try {
-      const response = await axios.get(
-        "http://localhost:4000/api/recon"
-      );
+      const response = await axios.get("/api/recon");
 
       setHistory(response.data.result);
     } 
@@ -63,10 +61,7 @@ function App() {
       formData.append("internalFile", internalFile);
       formData.append("custodianFile", custodianFile);
 
-      const response = await axios.post(
-        "http://localhost:4000/api/recon",
-        formData
-      );
+      const response = await axios.post("/api/recon", formData);
 
       setResult(response.data);
       console.log("FULL API RESPONSE:", response.data);
@@ -90,9 +85,7 @@ function App() {
   setHistoryError("");
 
   try {
-    const response = await axios.get(
-      `http://localhost:4000/api/recon/${runId}`
-    );
+    const response = await axios.get(`/api/recon/${runId}`);
 
     setSelectedRun(response.data);
   } catch (err) {

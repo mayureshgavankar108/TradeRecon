@@ -32,3 +32,6 @@ coverage/
 *.db
 *.db-shm
 *.db-wal
+
+# Docker local overrides
+docker-compose.override.yaml
