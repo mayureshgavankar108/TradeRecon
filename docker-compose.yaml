@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: traderecon-backend
+    env_file:
+      - ./server/.env
+    environment:
+      DB_PATH: /app/data/traderecon.db
+    ports:
+      - "4000:4000"
+    volumes:
+      - traderecon-data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: traderecon-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  traderecon-data:
