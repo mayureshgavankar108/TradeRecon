@@ -3,9 +3,10 @@ node_modules/
 client/node_modules/
 server/node_modules/
 
-# Environment variables
+# Environment variables and secrets
 .env
 .env.*
+!.env.example
 
 # SQLite databases
 server/*.db
