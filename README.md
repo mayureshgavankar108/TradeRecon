@@ -27,6 +27,8 @@ Built using React, Node.js, Express, and SQLite, the project demonstrates REST A
 | CSV Parsing | csv-parse |
 | File Uploads | Multer |
 | HTTP Client | Axios |
+| Web Server / Reverse Proxy | Nginx |
+| Containerization | Docker, Docker Compose |
 | Testing | Jest, Supertest |
 | API Testing | Postman |
 | Version Control | Git, GitHub |
@@ -62,11 +64,16 @@ TradeRecon provides a unified dashboard for uploading trade records, reviewing r
 TradeRecon/
 ├── client/
 │   ├── public/
-│   └── src/
-│       ├── App.jsx
-│       ├── App.css
-│       ├── index.css
-│       └── main.jsx
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── nginx.conf
+│   ├── package.json
+│   └── vite.config.js
 ├── server/
 │   ├── src/
 │   │   ├── routes/
@@ -75,13 +82,62 @@ TradeRecon/
 │   │   ├── db.js
 │   │   ├── reconcile.js
 │   │   └── server.js
-│   └── tests/
-│       ├── reconcile.test.js
-│       └── recon.api.test.js
+│   ├── tests/
+│   │   ├── reconcile.test.js
+│   │   └── recon.api.test.js
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── .env.example
+│   └── package.json
+├── screenshots/
+│   └── dashboard.png
+├── docker-compose.yaml
 ├── .gitignore
 ├── package.json
 └── README.md
 ```
+
+## Running with Docker
+
+### Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+- Git installed.
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/mayureshgavankar108/TradeRecon.git
+   cd TradeRecon
+   ```
+
+2. Build and start the application:
+
+   ```bash
+   docker compose up --build
+   ```
+
+3. Open the application in your browser:
+
+   `http://localhost:8080`
+
+Docker Compose builds and starts the React frontend served by Nginx and the Node.js/Express backend.
+
+### Stopping the Application
+
+Press `Ctrl + C` in the terminal, then run:
+
+```bash
+docker compose down
+```
+
+### Database Persistence
+
+Reconciliation history is stored in SQLite using a named Docker volume. This allows the data to persist when containers are stopped, removed, and recreated.
+
+**Note:** The backend also has local development instructions below. Use the Docker instructions if you want to run the containerized application.
 
 ## Getting Started
 
