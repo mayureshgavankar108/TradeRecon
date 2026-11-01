@@ -1,4 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap");
+
+:root {
+  --sans: "IBM Plex Sans", Arial, sans-serif;
+  --serif: "Newsreader", Georgia, serif;
+
+  --bg: #eceeea;
+  --surface: #ffffff;
+  --paper: #f7f8f5;
+  --line: #dde1dc;
+  --ink: #15202b;
+  --muted: #5d6b78;
+  --header: #0e1a21;
+
+  --accent: #0b6e66;
+  --accent-dark: #08524c;
+  --accent-soft: #e2f2ef;
+
+  --amber: #d08a1c;
+  --blue: #3d6fcf;
+  --rose: #c8455a;
+  --violet: #7b57cc;
+}
 
 * {
   box-sizing: border-box;
@@ -6,19 +28,65 @@
 
 body {
   margin: 0;
-  font-family: "Inter", Arial, sans-serif;
-  background: #f5f7fb;
-  color: #172238;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
 button:focus-visible,
-input:focus-visible {
-  outline: 2px solid #4263eb;
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* ---------- Scrollbars ---------- */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #9fb0ab var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4c1bc;
+  border-radius: 999px;
+  border: 3px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Tables scroll horizontally on small screens: keep them slimmer, on white */
+.table-container {
+  scrollbar-width: thin;
+  scrollbar-color: #b4c1bc var(--paper);
+}
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: var(--paper);
+  border-radius: 0 0 8px 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  border: 2px solid var(--paper);
 }

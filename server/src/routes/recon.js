@@ -68,10 +68,7 @@ router.post(
             const internalTrades = parseFile(req.files.internalFile[0]);
             const custodianTrades = parseFile(req.files.custodianFile[0]);
 
-            const result = reconcileTrades(
-                internalTrades,
-                custodianTrades
-            );
+            const result = reconcileTrades(internalTrades, custodianTrades);
 
             const insertRun = db.prepare(`
                 INSERT INTO recon_runs (
