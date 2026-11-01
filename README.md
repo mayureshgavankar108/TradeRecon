@@ -35,7 +35,7 @@ Built using React, Node.js, Express, and SQLite, the project demonstrates REST A
 
 ## Application Preview
 
-![TradeRecon Dashboard](screenshots/dashboard.png)
+![TradeRecon Dashboard](screenshots/dashboard.png?v=2)
 
 TradeRecon provides a unified dashboard for uploading trade records, reviewing reconciliation history, and investigating discrepancies between internal and custodian records.
 
